@@ -46,9 +46,9 @@ public class CheckEvents extends javax.swing.JFrame {
         eventName = new javax.swing.JLabel();
         eventLocation = new javax.swing.JLabel();
         eventDate = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        eventDescription = new javax.swing.JTextArea();
         jButton3 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         sliderPanel = new javax.swing.JPanel();
         prevEvent = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
@@ -84,14 +84,32 @@ public class CheckEvents extends javax.swing.JFrame {
 
         eventDate.setText("EVENT_DATETIME");
 
-        jScrollPane1.setBorder(null);
+        jButton3.setText("Get Tickets");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        eventDescription.setColumns(20);
-        eventDescription.setRows(5);
-        eventDescription.setBorder(javax.swing.BorderFactory.createTitledBorder("Event Description"));
-        jScrollPane1.setViewportView(eventDescription);
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Event Description"));
 
-        jButton3.setText("Giet Tickets");
+        jLabel1.setText("EVENT_DESCRIPTION");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 84, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout eventContainerLayout = new javax.swing.GroupLayout(eventContainer);
         eventContainer.setLayout(eventContainerLayout);
@@ -104,13 +122,13 @@ public class CheckEvents extends javax.swing.JFrame {
                         .addComponent(eventLocation)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(eventDate))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eventContainerLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton3))
                     .addGroup(eventContainerLayout.createSequentialGroup()
                         .addComponent(eventName)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eventContainerLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3)))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         eventContainerLayout.setVerticalGroup(
@@ -123,8 +141,8 @@ public class CheckEvents extends javax.swing.JFrame {
                     .addComponent(eventLocation)
                     .addComponent(eventDate))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(9, 9, 9)
                 .addComponent(jButton3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -224,6 +242,12 @@ public class CheckEvents extends javax.swing.JFrame {
 
     }//GEN-LAST:event_nextEventActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        new GetTickets().setVisible(true);
+      
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -264,13 +288,13 @@ public class CheckEvents extends javax.swing.JFrame {
     private javax.swing.JLabel discoverTitle;
     private javax.swing.JPanel eventContainer;
     private javax.swing.JLabel eventDate;
-    private javax.swing.JTextArea eventDescription;
     private javax.swing.JLabel eventLocation;
     private javax.swing.JLabel eventName;
     private javax.swing.JPanel headerPanel;
     private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JButton logoutButton;
     private javax.swing.JButton nextEvent;

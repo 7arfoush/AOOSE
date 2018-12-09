@@ -8,50 +8,59 @@ package Booking;
 import Event.Event;
 import User.Goer;
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 /**
  *
  * @author holo7
  */
-public class Booking {
-    
+public class Booking implements BookingsArchive{
+
+    static ArrayList<Booking> Archive = new ArrayList<>();
     private int ticketsBought;
-    
-    
     Event e = new Event();
     Ticket t = new Ticket();
     Goer g = new Goer();
     LocalDate dateOfBooking;
-    
-    public Booking()
-    {
-        
-    };
-    
-    Booking(Goer booker, Event event, Ticket tickets)
-    {
+
+    public Booking() {
+
+    }
+
+    Booking(Goer booker, Event event, Ticket tickets) {
         this.g = booker;
         this.e = event;
         this.t = tickets;
     }
 
-    
-    public void eventBooking(Event event, int issuedTicketsAmount, Goer booker)
-    {
-       g = booker;
-       e = event;
-       g.addToGoerBookings(this);
-       t.sellTickets(issuedTicketsAmount);
-       this.ticketsBought = issuedTicketsAmount;
-//       System.out.println("Goer who booked: " + booker.getName());
-//        System.out.println("Event booked: " + event.getEventName());
-//        System.out.println("Amount of tickets: " + issuedTicketsAmount);
+    public void addToArchive() {
+        Archive.add(this);
     }
-    
-    public void bookingInfo()
-    {
+
+    public void eventBooking(Event event, int issuedTicketsAmount, Goer booker) {
+        this.g = booker;
+        this.e = event;
+        this.g.addToGoerBookings(this);
+        this.t.sellTickets(issuedTicketsAmount);
+        this.ticketsBought = issuedTicketsAmount;
+        this.addToArchive();
+        System.out.println("Booking done successfully. Goer: " + booker.getName() + ". Event: " + e.getEventName() + ". Tickets bought: " + ticketsBought);
+    }
+
+    public void bookingInfo() {
         System.out.println("Goer who booked: " + g.getName());
         System.out.println("Event booked: " + e.getEventName());
         System.out.println("Amount of tickets: " + ticketsBought);
+    }
+
+    @Override
+    public void retrieveAllFromArchieve() {
+        System.out.println(Archive.size());
+
+        for (int i = 0; i < Archive.size(); i++) {
+
+            Archive.get(i).bookingInfo();
+            System.out.println("-----------");
+        }
     }
 }

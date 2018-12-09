@@ -9,6 +9,8 @@ package Booking;
  *
  * @author holo7
  */
-public class OrdersArchive {
+public interface BookingsArchive {
+    
+    public void retrieveAllFromArchieve();
     
 }

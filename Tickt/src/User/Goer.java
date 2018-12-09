@@ -24,7 +24,7 @@ public class Goer extends User {
     public void makeBooking(Event chosenEvent, int amountOfTickets) {
         Booking newBooking = new Booking();
         newBooking.eventBooking(chosenEvent, amountOfTickets, this);
-        addToGoerBookings(newBooking);
+        addToGoerBookings(newBooking);       
     }
 
     public void displayBookings() {

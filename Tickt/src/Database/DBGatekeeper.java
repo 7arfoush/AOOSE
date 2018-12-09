@@ -9,7 +9,7 @@ package Database;
  *
  * @author holo7
  */
-public class AccessDB {
+public class DBGatekeeper {
 
     public static void main(String[] args) {
         // TODO code application logic here

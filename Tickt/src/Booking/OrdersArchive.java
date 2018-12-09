@@ -9,6 +9,6 @@ package Booking;
  *
  * @author holo7
  */
-public class EventRemote {
+public class OrdersArchive {
     
 }

@@ -5,7 +5,7 @@
  */
 package tickt;
 
-import Booking.Event;
+import Event.Event;
 import java.time.Month;
 
 /**

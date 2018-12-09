@@ -14,8 +14,10 @@ import java.time.LocalDateTime;
 import java.time.Month;
 public class Event {
     
+    private String ID;
     private String title;
     private String location;
+    private String description;
     private LocalDateTime dateTime;
     private int availableTickets;
     private double ticketPrice;
@@ -53,7 +55,14 @@ public class Event {
         this.location = location;
     }
     
+    public String getEventDescription() {
+        return description;
+    }
   
+    public void setEventDescription(String desc) {
+        this.description = desc;
+    }
+    
     public int getAvailableTickets() {
         return availableTickets;
     }
@@ -65,8 +74,8 @@ public class Event {
         return ticketPrice;
     }
     
-    public void setTicketPrice(int numOfAvailableTickets) {
-        this.availableTickets = numOfAvailableTickets;
+    public void setTicketPrice(double priceOfTicket) {
+        this.ticketPrice = priceOfTicket;
     }
     
 }

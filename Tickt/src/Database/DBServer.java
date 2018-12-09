@@ -11,13 +11,9 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.mongodb.client.model.Filters;
-import java.time.Month;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.Document;
-import Event.Event;
 
 /**
  *
@@ -40,20 +36,6 @@ public class DBServer implements DB {
         database = client.getDatabase("Tickt"); // Database name
         collection = database.getCollection("events");
     }
-    //    public void insertStudent(Student s) {
-    //        collection.insertOne(Document.parse(gson.toJson(s)));
-    //        System.out.println("Student inserted.");
-    //    }
-    //
-    //    public void deleteStudent(String email) {
-    //        boolean result = collection.deleteOne(Filters.eq("email", email)).wasAcknowledged();
-    //        if (result) {
-    //            System.out.println("Student Deleted.");
-    //        } else {
-    //            System.out.println("Student wasn't found.");
-    //        }
-    //    }
-
 
 
     @Override
@@ -79,51 +61,6 @@ public class DBServer implements DB {
         System.out.println(name);
         return name;
     }
-//    public ArrayList<Student> getStudentsByYear(int year) {
-//        ArrayList<Student> result = new ArrayList();
-//        ArrayList<Document> docs = collection.find(Filters.eq("year", year)).into(new ArrayList<Document>());
-//        for (int i = 0; i < docs.size(); i++) {
-//            result.add(gson.fromJson(docs.get(i).toJson(), Student.class));
-//        }
-//        return result;
-//    }
-//
-//    public ArrayList<Student> getStudentsByYearLT(int year) {
-//        ArrayList<Student> result = new ArrayList();
-//        ArrayList<Document> docs = collection.find(Filters.lt("year", year)).into(new ArrayList<Document>());
-//        for (int i = 0; i < docs.size(); i++) {
-//            result.add(gson.fromJson(docs.get(i).toJson(), Student.class));
-//        }
-//        return result;
-//    }
-//
-//    public ArrayList<Student> getStudentsByCourse(String courseID) {
-//        ArrayList<Student> result = new ArrayList();
-//        ArrayList<Document> docs = collection.find(Filters.eq("courses.courseID", courseID)).into(new ArrayList<Document>());
-//        for (int i = 0; i < docs.size(); i++) {
-//            result.add(gson.fromJson(docs.get(i).toJson(), Student.class));
-//        }
-//        return result;
-//    }
-//
-//    public ArrayList<Student> getAllStudents() {
-//        ArrayList<Student> result = new ArrayList();
-//        ArrayList<Document> docs = collection.find().into(new ArrayList<Document>());
-//        for (int i = 0; i < docs.size(); i++) {
-//            result.add(gson.fromJson(docs.get(i).toJson(), Student.class));
-//        }
-//        return result;
-//    }
-//
-//    public void updateStudent(Student s) {
-//        Document doc = Document.parse(gson.toJson(s));
-//        boolean result = collection.replaceOne(Filters.eq("email", s.getEmail()), doc).wasAcknowledged();
-//        if (result) {
-//            System.out.println("Student Updated.");
-//        } else {
-//            System.out.println("Student wasn't found.");
-//        }
-//    }
 
     public void close() {
         client.close();

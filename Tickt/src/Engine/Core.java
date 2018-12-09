@@ -3,24 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tickt;
+package Engine;
 
 import Event.Event;
+import User.Goer;
 import java.time.Month;
 
 /**
  *
  * @author holo7
  */
-public class Tickt {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Event e = new Event("1", "Nasr City", 2019, Month.MARCH, 22, 6, 30, 300, 80);
+public class Core {
     
+    
+    public static void main(String[] args) {
+        Goer g = new Goer();
+        Event e = new Event("ER", "Haram", 2018, Month.MARCH, 22, 15, 30, 300, 30);
+        g.makeBooking(e, 2);
+        g.displayBookings();
     }
     
 }

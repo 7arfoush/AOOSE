@@ -11,6 +11,7 @@ package User;
  */
 public class User {
     
+    int ID;
     String name;
     String age;
     
@@ -18,9 +19,15 @@ public class User {
         
     };
     
-    User(String userName, String userAge)
+    User(int userID, String userName, String userAge)
     {
+        this.ID = userID;
         this.name = userName;
         this.age = userAge;
+    }
+    
+    public String getName()
+    {
+        return name;
     }
 }

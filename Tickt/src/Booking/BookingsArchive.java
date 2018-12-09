@@ -10,7 +10,7 @@ package Booking;
  * @author holo7
  */
 public interface BookingsArchive {
-    
+        
     public void retrieveAllFromArchieve();
     
 }

@@ -16,7 +16,7 @@ import java.util.ArrayList;
  */
 public class Booking implements BookingsArchive{
 
-    static ArrayList<Booking> Archive = new ArrayList<>();
+    static ArrayList<Booking> ARCHIVE = new ArrayList<>();
     private int ticketsBought;
     Event e = new Event();
     Ticket t = new Ticket();
@@ -34,7 +34,7 @@ public class Booking implements BookingsArchive{
     }
 
     public void addToArchive() {
-        Archive.add(this);
+        ARCHIVE.add(this);
     }
 
     public void eventBooking(Event event, int issuedTicketsAmount, Goer booker) {
@@ -55,11 +55,12 @@ public class Booking implements BookingsArchive{
 
     @Override
     public void retrieveAllFromArchieve() {
-        System.out.println(Archive.size());
+        System.out.println("------ARCHIVE------");
+        System.out.println("Bookings in archive: " + ARCHIVE.size());
 
-        for (int i = 0; i < Archive.size(); i++) {
+        for (int i = 0; i < ARCHIVE.size(); i++) {
 
-            Archive.get(i).bookingInfo();
+            ARCHIVE.get(i).bookingInfo();
             System.out.println("-----------");
         }
     }

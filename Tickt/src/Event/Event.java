@@ -37,7 +37,6 @@ public class Event {
     }
 
     public String getEventName() {
-        System.out.println(title);
         return title;
     }
 

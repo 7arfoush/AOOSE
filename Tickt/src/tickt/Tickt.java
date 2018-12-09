@@ -3,19 +3,24 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Database;
+package tickt;
+
+import Booking.Event;
+import java.time.Month;
 
 /**
  *
  * @author holo7
  */
-public class AccessDB {
+public class Tickt {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
         // TODO code application logic here
-        DB dbo = new DBProxy();
-        dbo.retrieveEventTitle(46);
-       
+        Event e = new Event("1", "Nasr City", 2019, Month.MARCH, 22, 6, 30, 300, 80);
+    
     }
     
 }

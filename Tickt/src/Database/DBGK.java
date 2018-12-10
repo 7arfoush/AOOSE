@@ -5,8 +5,6 @@
  */
 package Database;
 
-import User.Goer;
-
 /**
  *
  * @author holo7
@@ -14,11 +12,5 @@ import User.Goer;
 public class DBGK {
 
    public DB dbo = new DBProxy();
-    
-    public static void main(String[] args) {
-        // TODO code application logic here
-        DB dbo = new DBProxy();
-        dbo.retrieveEventTitle(46);       
-    }
     
 }

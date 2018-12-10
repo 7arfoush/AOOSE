@@ -15,7 +15,7 @@ public class Ticket {
     private int numOfAllTickets;
     private double priceOfTicket;
 
-    Ticket() {
+    public Ticket() {
 
     }
 

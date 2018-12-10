@@ -5,10 +5,8 @@
  */
 package User;
 
-import Booking.Booking;
 import Event.Event;
 import java.util.ArrayList;
-import Database.DBGK;
 /**
  *
  * @author holo7
@@ -35,6 +33,11 @@ public class EventManager implements User{
     public String getName()
     {
         return name;
+    }
+    
+    public void setName(String name)
+    {
+        this.name = name;
     }
     
     public int getID()

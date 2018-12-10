@@ -29,7 +29,7 @@ public class DBServer implements DB {
     private MongoDatabase database;
     private MongoCollection<Document> collectionEvents;
     private MongoCollection<Document> collectionAccounts;
-    private final MongoCollection<Document> collectionBookings;
+    private MongoCollection<Document> collectionBookings;
     private Gson gson = new Gson();
 
     public DBServer() {
@@ -89,6 +89,7 @@ public class DBServer implements DB {
         System.out.println("Booking inserted.");
     }
     
+    @Override
     public void addNewEvent(Event event)
     {
         //This results in a StackOverFlowError.

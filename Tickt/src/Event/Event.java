@@ -16,27 +16,27 @@ import java.time.Month;
 
 public class Event {
 
-    private String ID;
+    private int ID;
     private String title;
     private String location;
     private String description;
     private LocalDateTime dateTime;
-    private int availableTickets;
-    private double ticketPrice;
-    DBGK DBaccess = new DBGK();
 
     public Event() {
 
     }
 
-    public Event(String name, String location, int eventYear, Month eventMonth, int eventDayOfMonth, int eventHour, int eventMinutes, int numOfAvailableTickets, double ticketPrice) {
+    public Event(int ID, String name, String location, String description) {
+        this.ID = ID;
         this.title = name;
         this.location = location;
-        this.dateTime = LocalDateTime.of(eventYear, eventMonth, eventDayOfMonth, availableTickets, availableTickets);
-        this.availableTickets = numOfAvailableTickets;
-        this.ticketPrice = ticketPrice;
+        this.description = description;
     }
 
+    public int getID() {
+        return ID;
+    }
+    
     public String getEventName() {
         return title;
     }
@@ -61,23 +61,8 @@ public class Event {
         this.description = desc;
     }
 
-    public int getAvailableTickets() {
-        return availableTickets;
-    }
-
-    public void setAvailableTickets(int numOfAvailableTickets) {
-        this.availableTickets = numOfAvailableTickets;
-    }
-
-    public double getTicketPrice() {
-        return ticketPrice;
-    }
-
-    public void setTicketPrice(double priceOfTicket) {
-        this.ticketPrice = priceOfTicket;
-    }
-
     public void eventInfo() {
+        System.out.println("Event ID: " + this.getID());
         System.out.println("Event title: " + this.getEventName());
         System.out.println("Event location: " + this.getEventLocation());
         System.out.println("Event description: " + this.getEventDescription());

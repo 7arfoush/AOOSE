@@ -19,7 +19,7 @@ public class Ticket {
 
     }
 
-    Ticket(int ticketPrice, int ticketsAmount) {
+    public Ticket(int ticketPrice, int ticketsAmount) {
         this.priceOfTicket = ticketPrice;
         this.numOfAllTickets = ticketsAmount;
     }

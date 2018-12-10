@@ -5,6 +5,7 @@
  */
 package User;
 
+import Booking.Booking;
 import Event.Event;
 import java.util.ArrayList;
 import Database.DBGK;
@@ -41,7 +42,6 @@ public class EventManager implements User{
         return ID;
     }
     
-
     public void createEvent(String eventName, String eventLocation, String eventDescription) {
         Event newEvent = new Event();
         newEvent.setEventName(eventName);

@@ -5,6 +5,7 @@
  */
 package Event;
 
+import Database.DBGK;
 import java.time.LocalDateTime;
 
 /**
@@ -22,6 +23,7 @@ public class Event {
     private LocalDateTime dateTime;
     private int availableTickets;
     private double ticketPrice;
+    DBGK DBaccess = new DBGK();
 
     public Event() {
 
@@ -33,7 +35,6 @@ public class Event {
         this.dateTime = LocalDateTime.of(eventYear, eventMonth, eventDayOfMonth, availableTickets, availableTickets);
         this.availableTickets = numOfAvailableTickets;
         this.ticketPrice = ticketPrice;
-
     }
 
     public String getEventName() {

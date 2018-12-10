@@ -5,9 +5,9 @@
  */
 package Booking;
 
+import Database.DBGK;
 import Event.Event;
 import User.Goer;
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -21,13 +21,12 @@ public class Booking implements BookingsArchive{
     Event e = new Event();
     Ticket t = new Ticket();
     Goer g = new Goer();
-    LocalDate dateOfBooking;
-
+    
     public Booking() {
 
     }
 
-    Booking(Goer booker, Event event, Ticket tickets) {
+    public Booking(Goer booker, Event event, Ticket tickets) {
         this.g = booker;
         this.e = event;
         this.t = tickets;
@@ -36,8 +35,9 @@ public class Booking implements BookingsArchive{
     public void addToArchive() {
         ARCHIVE.add(this);
     }
-
+    
     public void eventBooking(Event event, int issuedTicketsAmount, Goer booker) {
+        
         this.g = booker;
         this.e = event;
         this.g.addToGoerBookings(this);

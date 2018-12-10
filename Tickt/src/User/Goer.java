@@ -6,6 +6,7 @@
 package User;
 
 import Booking.Booking;
+import Database.DBGK;
 import Event.Event;
 import java.util.ArrayList;
 
@@ -17,11 +18,12 @@ public class Goer implements User {
 
     ArrayList<Booking> goerBookings = new ArrayList();
 
-    final int TYPE = 1;
     int ID;
     String name;
     int age;
-
+    
+    
+    
     public Goer(int userID, String userName, int userAge) {
         this.ID = userID;
         this.name = userName;
@@ -56,6 +58,7 @@ public class Goer implements User {
         goerBookings.add(b);
     }
 
+    @Override
     public void makeBooking(Event chosenEvent, int amountOfTickets) {
         Booking newBooking = new Booking();
         newBooking.eventBooking(chosenEvent, amountOfTickets, this);

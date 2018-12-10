@@ -5,6 +5,8 @@
  */
 package Database;
 
+import Booking.Booking;
+import Event.Event;
 import User.EventManager;
 import User.Goer;
 
@@ -34,12 +36,24 @@ public class DBProxy implements DB {
     @Override
     public void addNewGoer(Goer goer)
     {
-        
+        dbo.addNewGoer(goer);
     }
     @Override
     public void addNewEventManager(EventManager eventManager)
     {
-        
+        dbo.addNewEventManager(eventManager);
+    }
+    
+    @Override
+    public void addNewBooking(Booking booking)
+    {
+        dbo.addNewBooking(booking);
+    }
+    
+    @Override
+    public void addNewEvent(Event event)
+    {
+        dbo.addNewEvent(event);
     }
 
 }

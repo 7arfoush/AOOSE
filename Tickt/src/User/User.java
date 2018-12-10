@@ -5,7 +5,10 @@
  */
 package User;
 
+import Booking.Booking;
+import Database.DBGK;
 import Event.Event;
+import java.util.ArrayList;
 
 /**
  *
@@ -15,8 +18,10 @@ public interface User {
     
     int GOER_TYPE = 1;
     int EVENT_MANAGER_TYPE = 2;
+    DBGK DBaccess = new DBGK();
     
     public String getName();
     
     public void makeBooking(Event chosenEvent, int orderedTicketsAmount);
+    
 }

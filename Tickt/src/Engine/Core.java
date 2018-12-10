@@ -8,8 +8,6 @@ package Engine;
 import Booking.Booking;
 import Booking.BookingsArchive;
 import Event.Event;
-import User.EventManager;
-import User.Goer;
 import User.UserManagement;
 import java.time.Month;
 
@@ -32,9 +30,11 @@ public class Core implements Tickter{
         BookingsArchive Archive = new Booking();
         System.out.println("Archive created.");
         UM.createAccount(1, "Yosr");
+        UM.createAccount(2, "Yosra");
         Event e = new Event("ER", "Haram", 2018, Month.MARCH, 22, 15, 30, 300, 30); 
+        Event ew = new Event("ER", "Haram", 2018, Month.MARCH, 22, 15, 30, 300, 30); 
         UM.Goers.get(0).makeBooking(e, 2);
-        UM.Goers.get(0).makeBooking(e, 5);
+        UM.Goers.get(0).makeBooking(ew, 5);
         System.out.println(UM.Goers.get(0).getName());
         Archive.retrieveAllFromArchieve();
         

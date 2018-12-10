@@ -5,6 +5,8 @@
  */
 package Database;
 
+import Booking.Booking;
+import Event.Event;
 import User.EventManager;
 import User.Goer;
 
@@ -23,5 +25,9 @@ public interface DB {
     public void addNewGoer(Goer goer);
     
     public void addNewEventManager(EventManager eventManager);
+    
+    public void addNewBooking(Booking booking);
+    
+    public void addNewEvent(Event event);
 
 }

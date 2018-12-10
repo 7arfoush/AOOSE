@@ -5,7 +5,6 @@
  */
 package Booking;
 
-import Database.DBGK;
 import Event.Event;
 import User.Goer;
 import java.util.ArrayList;
@@ -14,14 +13,14 @@ import java.util.ArrayList;
  *
  * @author holo7
  */
-public class Booking implements BookingsArchive{
+public class Booking implements BookingsArchive {
 
     static ArrayList<Booking> ARCHIVE = new ArrayList<>();
     private int ticketsBought;
     Event e = new Event();
     Ticket t = new Ticket();
     Goer g = new Goer();
-    
+
     public Booking() {
 
     }
@@ -35,15 +34,16 @@ public class Booking implements BookingsArchive{
     public void addToArchive() {
         ARCHIVE.add(this);
     }
-    
+
     public void eventBooking(Event event, int issuedTicketsAmount, Goer booker) {
-        
+
         this.g = booker;
         this.e = event;
         this.g.addToGoerBookings(this);
         this.t.sellTickets(issuedTicketsAmount);
         this.ticketsBought = issuedTicketsAmount;
         this.addToArchive();
+
         System.out.println("Booking done successfully. Goer: " + booker.getName() + ". Event: " + e.getEventName() + ". Tickets bought: " + ticketsBought);
     }
 

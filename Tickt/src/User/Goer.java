@@ -6,7 +6,6 @@
 package User;
 
 import Booking.Booking;
-import Database.DBGK;
 import Event.Event;
 import java.util.ArrayList;
 
@@ -21,9 +20,7 @@ public class Goer implements User {
     int ID;
     String name;
     int age;
-    
-    
-    
+
     public Goer(int userID, String userName, int userAge) {
         this.ID = userID;
         this.name = userName;
@@ -33,27 +30,24 @@ public class Goer implements User {
     public Goer() {
 
     }
-    
+
     @Override
     public String getName() {
         return name;
     }
-    
-    public int getID()
-    {
+
+    public int getID() {
         return ID;
     }
-    
-    public int getAge()
-    {
+
+    public int getAge() {
         return age;
     }
 
-    public void setName(String name)
-    {
+    public void setName(String name) {
         this.name = name;
     }
-    
+
     public void addToGoerBookings(Booking b) {
         goerBookings.add(b);
     }

@@ -29,7 +29,7 @@ public class DBServer implements DB {
     private MongoDatabase database;
     private MongoCollection<Document> collectionEvents;
     private MongoCollection<Document> collectionAccounts;
-    private MongoCollection<Document> collectionBookings;
+    private final MongoCollection<Document> collectionBookings;
     private Gson gson = new Gson();
 
     public DBServer() {

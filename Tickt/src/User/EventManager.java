@@ -7,14 +7,40 @@ package User;
 
 import Event.Event;
 import java.util.ArrayList;
-import Database.DBGatekeeper;
+import Database.DBGK;
 /**
  *
  * @author holo7
  */
-public class EventManager {
+public class EventManager implements User{
 
     ArrayList<Event> managingEvents = new ArrayList();
+    
+    int ID;
+    String name;
+    
+    public EventManager()
+    {
+        
+    }
+    
+    EventManager(int userID, String userName)
+    {
+        this.ID = userID;
+        this.name = userName;
+    }
+    
+    @Override
+    public String getName()
+    {
+        return name;
+    }
+    
+    public int getID()
+    {
+        return ID;
+    }
+    
 
     public void createEvent(String eventName, String eventLocation, String eventDescription) {
         Event newEvent = new Event();
@@ -29,5 +55,11 @@ public class EventManager {
             managingEvents.get(i).eventInfo();
             System.out.println("-----------");
         }
+    }
+    
+    @Override
+    public void makeBooking(Event chosenEvent, int orderTicketsAmount)
+    {
+        System.out.println("This type of users cannot place bookings.");
     }
 }

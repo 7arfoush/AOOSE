@@ -5,13 +5,16 @@
  */
 package Database;
 
+import User.EventManager;
+import User.Goer;
+
 /**
  *
  * @author holo7
  */
 public class DBProxy implements DB {
 
-    DBServer dbo = new DBServer();
+    DB dbo = new DBServer();
 
     @Override
     public String retrieveEventTitle(int eID) {
@@ -26,6 +29,17 @@ public class DBProxy implements DB {
     @Override
     public String retrieveEventDescription(int eID) {
         return dbo.retrieveEventDescription(eID);
+    }
+    
+    @Override
+    public void addNewGoer(Goer goer)
+    {
+        
+    }
+    @Override
+    public void addNewEventManager(EventManager eventManager)
+    {
+        
     }
 
 }

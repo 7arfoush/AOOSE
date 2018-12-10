@@ -11,4 +11,6 @@ package Engine;
  */
 public interface Tickter {
     
+    void update();
+    
 }

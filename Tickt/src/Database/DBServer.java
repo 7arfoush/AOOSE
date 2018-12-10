@@ -5,6 +5,8 @@
  */
 package Database;
 
+import User.EventManager;
+import User.Goer;
 import com.google.gson.Gson;
 import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
@@ -37,7 +39,6 @@ public class DBServer implements DB {
         collection = database.getCollection("events");
     }
 
-
     @Override
     public String retrieveEventTitle(int eID) {
         Document doc = collection.find(Filters.eq("eventID", eID)).first();
@@ -60,6 +61,16 @@ public class DBServer implements DB {
         String name = doc.getString("eventDescription");
         System.out.println(name);
         return name;
+    }
+
+    @Override
+    public void addNewGoer(Goer goer) {
+
+    }
+
+    @Override
+    public void addNewEventManager(EventManager eventManager) {
+
     }
 
     public void close() {

@@ -5,6 +5,9 @@
  */
 package Database;
 
+import User.EventManager;
+import User.Goer;
+
 /**
  *
  * @author holo7
@@ -16,5 +19,9 @@ public interface DB {
     public String retrieveEventLocation(int eID);
 
     public String retrieveEventDescription(int eID);
+    
+    public void addNewGoer(Goer goer);
+    
+    public void addNewEventManager(EventManager eventManager);
 
 }

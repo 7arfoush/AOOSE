@@ -10,24 +10,34 @@ import Booking.BookingsArchive;
 import Event.Event;
 import User.EventManager;
 import User.Goer;
+import User.UserManagement;
 import java.time.Month;
 
 /**
  *
  * @author holo7
  */
-public class Core {
+public class Core implements Tickter{
+    
+    @Override
+    public void update()
+    {
+        
+    }
     
     public static void main(String[] args) {
         
+        UserManagement UM = new UserManagement();
         System.out.println("Initializing...");
         BookingsArchive Archive = new Booking();
         System.out.println("Archive created.");
-        Goer g = new Goer();
+        UM.createAccount(1, "Yosr");
         Event e = new Event("ER", "Haram", 2018, Month.MARCH, 22, 15, 30, 300, 30); 
-        g.makeBooking(e, 2);
-        g.makeBooking(e, 5);
+        UM.Goers.get(0).makeBooking(e, 2);
+        UM.Goers.get(0).makeBooking(e, 5);
+        System.out.println(UM.Goers.get(0).getName());
         Archive.retrieveAllFromArchieve();
+        
        
 //        g.displayBookings();
 //        EventManager Yasser = new EventManager();

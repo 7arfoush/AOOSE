@@ -9,8 +9,14 @@ package Engine;
  *
  * @author holo7
  */
-public class TicktAPI {
+public class TicktAPI implements Tickter{
     
-    Core Tickt = new Core();
+    Tickter Tickt = new Core();
+    
+    @Override
+    public void update()
+    {
+        
+    }
     
 }

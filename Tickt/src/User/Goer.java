@@ -13,10 +13,45 @@ import java.util.ArrayList;
  *
  * @author holo7
  */
-public class Goer extends User {
+public class Goer implements User {
 
     ArrayList<Booking> goerBookings = new ArrayList();
 
+    final int TYPE = 1;
+    int ID;
+    String name;
+    int age;
+
+    public Goer(int userID, String userName, int userAge) {
+        this.ID = userID;
+        this.name = userName;
+        this.age = userAge;
+    }
+
+    public Goer() {
+
+    }
+    
+    @Override
+    public String getName() {
+        return name;
+    }
+    
+    public int getID()
+    {
+        return ID;
+    }
+    
+    public int getAge()
+    {
+        return age;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
     public void addToGoerBookings(Booking b) {
         goerBookings.add(b);
     }
@@ -24,7 +59,7 @@ public class Goer extends User {
     public void makeBooking(Event chosenEvent, int amountOfTickets) {
         Booking newBooking = new Booking();
         newBooking.eventBooking(chosenEvent, amountOfTickets, this);
-        addToGoerBookings(newBooking);       
+        addToGoerBookings(newBooking);
     }
 
     public void displayBookings() {

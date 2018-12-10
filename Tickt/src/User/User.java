@@ -5,29 +5,18 @@
  */
 package User;
 
+import Event.Event;
+
 /**
  *
  * @author holo7
  */
-public class User {
+public interface User {
     
-    int ID;
-    String name;
-    String age;
+    int GOER_TYPE = 1;
+    int EVENT_MANAGER_TYPE = 2;
     
-    User(){
-        
-    };
+    public String getName();
     
-    User(int userID, String userName, String userAge)
-    {
-        this.ID = userID;
-        this.name = userName;
-        this.age = userAge;
-    }
-    
-    public String getName()
-    {
-        return name;
-    }
+    public void makeBooking(Event chosenEvent, int orderedTicketsAmount);
 }

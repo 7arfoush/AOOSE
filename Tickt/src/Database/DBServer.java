@@ -64,15 +64,16 @@ public class DBServer implements DB {
     @Override
     public String retrieveEventDescription(int eID) {
         Document doc = collectionEvents.find(Filters.eq("eventID", eID)).first();
-        String name = doc.getString("eventDescription");
+        String name = doc.getString("eventTitle");
         System.out.println(name);
         return name;
     }
 
     @Override
-    public void addNewGoer(Goer goer) {
+    public boolean addNewGoer(Goer goer) {
         collectionAccounts.insertOne(Document.parse(gson.toJson(goer)));
         System.out.println("Goer inserted.");
+        return true;
     }
 
     @Override

@@ -22,7 +22,7 @@ public interface DB {
 
     public String retrieveEventDescription(int eID);
     
-    public void addNewGoer(Goer goer);
+    public boolean addNewGoer(Goer goer);
     
     public void addNewEventManager(EventManager eventManager);
     

@@ -12,5 +12,11 @@ package Database;
 public class DBGK {
 
    public DB dbo = new DBProxy();
+
+   public static void main (String[] args)
+   {
+       DB dbo = new DBProxy();
+       dbo.retrieveEventDescription(23);
+   }
     
 }

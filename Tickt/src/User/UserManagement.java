@@ -19,26 +19,36 @@ public class UserManagement {
     public ArrayList<User> Goers = new ArrayList<>();
     public ArrayList<User> EventManagers = new ArrayList<>();
 
+    public Goer basicGoer;
+    public EventManager basicEventManager;
+
     DBGK DBaccess = new DBGK();
 
-    public void createAccount(int requestedType, String name) {
+    public User createAccount(int requestedType, String name) {
         switch (requestedType) {
             case GOER_TYPE:
                 int age = 0;
-                Goer newGoer = new Goer(Goers.size() + 1, name, age);
-                Goers.add(newGoer);
-                DBaccess.dbo.addNewGoer(newGoer);
+                basicGoer = new Goer(Goers.size() + 1, name, age);
+//                Goer newGoer = new Goer(Goers.size() + 1, name, age);
+//                Goers.add(newGoer);
+//                DBaccess.dbo.addNewGoer(newGoer);
+                Goers.add(basicGoer);
+                DBaccess.dbo.addNewGoer(basicGoer);
+                System.out.println(basicGoer.name);
                 System.out.println("Goer created.");
-                break;
+                return basicGoer;
+                
             case EVENT_MANAGER_TYPE:
-                EventManager newEM = new EventManager(EventManagers.size() + 1, name);
-                EventManagers.add(newEM);
-                DBaccess.dbo.addNewEventManager(newEM);
+                basicEventManager = new EventManager(EventManagers.size() + 1, name);
+                EventManagers.add(basicEventManager);
+                DBaccess.dbo.addNewEventManager(basicEventManager);
                 System.out.println("Event manager created.");
-                break;
+                return basicEventManager;
+        
             default:
                 System.out.println("Invalid type requested.");
                 break;
         }
+        return null;
     }
 }

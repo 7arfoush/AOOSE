@@ -34,9 +34,10 @@ public class DBProxy implements DB {
     }
     
     @Override
-    public void addNewGoer(Goer goer)
+    public boolean addNewGoer(Goer goer)
     {
         dbo.addNewGoer(goer);
+        return true;
     }
     @Override
     public void addNewEventManager(EventManager eventManager)

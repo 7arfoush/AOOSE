@@ -17,7 +17,7 @@ public interface User {
     int EVENT_MANAGER_TYPE = 2;
 
     public String getName();
-
+    public int getID();
     public void makeBooking(Event chosenEvent, int orderedTicketsAmount);
 
 }
